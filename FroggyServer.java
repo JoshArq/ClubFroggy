@@ -268,7 +268,16 @@ class ClientThread extends Thread{
  }//end doLogIn
  
  //method to send a message
- public void doSendMessage(){}
+ public void doSendMessage(Message m){
+  if(loggedIn){ 
+   try{
+    out.writeUTF("nm");
+    out.writeObject(m);
+   }catch(IOException ioe){base.log("IOException "+ioe);
+    return;
+   }//end try/catch
+  }//end if
+ }//end doSendMesssage
  
  //method to check for profanity
  public String checkSwears(String message){
