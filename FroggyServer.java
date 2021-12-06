@@ -272,6 +272,7 @@ class ClientThread extends Thread{
   if(loggedIn){ 
    try{
     out.writeUTF("nm");
+    m.setContents(checkSwears(m.getContents()); //what in the fresh hell man
     out.writeObject(m);
    }catch(IOException ioe){base.log("IOException "+ioe);
     return;
@@ -283,8 +284,10 @@ class ClientThread extends Thread{
  public String checkSwears(String message){
   Files.readAllLines(Path.of("profanity_en.csv")).stream().map(line -> line.split(",")).forEach(entry -> /* .. */); // reads lines, splits them by commas, and the resulting entry is of type String[]
   
-  StringBuilder sb = new StringBuilder(); // create stringbuilder and uh
-  
+  StringBuilder sb = new StringBuilder(); // create stringbuilder and uhh. line.split("\\s") to grab the words
+  //loop:
+  //compare string
+  //update sb
   return sb.toString();
  }
 }//end ClientThread
