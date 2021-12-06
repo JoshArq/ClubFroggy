@@ -269,4 +269,13 @@ class ClientThread extends Thread{
  
  //method to send a message
  public void doSendMessage(){}
+ 
+ //method to check for profanity
+ public String checkSwears(String message){
+  Files.readAllLines(Path.of("profanity_en.csv")).stream().map(line -> line.split(",")).forEach(entry -> /* .. */); // reads lines, splits them by commas, and the resulting entry is of type String[]
+  
+  StringBuilder sb = new StringBuilder(); // create stringbuilder and uh
+  
+  return sb.toString();
+ }
 }//end ClientThread
